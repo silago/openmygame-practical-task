@@ -11,12 +11,15 @@ namespace Controlles
 
         public void ShowPreview(PuzzleData data)
         {
-            screenNavigator.Push<PuzzlePreviewScreen>(PuzzlePreviewScreen.GetContextDecorator(data));
+            screenNavigator.Push<PuzzlePreviewScreen>(
+                PuzzlePreviewScreen.GetContextDecorator(data),
+                hidePrevious: true
+            );
         }
         
         public void StartGame()
         {
-            screenNavigator.Push<StartScreen>();
+            screenNavigator.Push<StartScreen>(hidePrevious: true);
         }
 
         public void StartPuzzle(PuzzleData data, StartType startType)

@@ -9,6 +9,11 @@ public class BaseScreen : MonoBehaviour
     {
         gameObject.SetActive(true);
     }
+    
+    public void Hide()
+    {
+        gameObject.SetActive(false);
+    }
 
     public void Close()
     {

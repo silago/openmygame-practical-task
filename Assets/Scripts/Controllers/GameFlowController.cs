@@ -9,7 +9,7 @@ namespace Controlles
 
         public void Initialize()
         {
-            nav.Push<MainScreen>();
+            nav.Push<MainScreen>(hidePrevious: true);
         }
     }
 }
