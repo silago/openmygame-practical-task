@@ -1,5 +1,6 @@
 ﻿using Screens;
 using Settings;
+using UnityEngine;
 using Zenject;
 
 namespace Controlles
@@ -20,7 +21,7 @@ namespace Controlles
 
         public void StartPuzzle(PuzzleData data, StartType startType)
         {
-            
+            Debug.Log("Starting the game here.");
         }
     }
 }

@@ -19,7 +19,27 @@ namespace Screens
 
         private void Awake()
         {
-            foreach (var puzzleData in settings.puzzles)
+            if (settings == null)
+            {
+                Debug.LogError("StartScreen: PuzzlesSettings is not assigned.");
+                return;
+            }
+            if (settings.puzzles == null || settings.puzzles.Count == 0)
+            {
+                Debug.LogWarning("StartScreen: No puzzles configured in PuzzlesSettings.");
+            }
+            if (buttonsContainer == null)
+            {
+                Debug.LogError("StartScreen: Buttons container is not assigned.");
+                return;
+            }
+            if (closeButton == null)
+            {
+                Debug.LogError("StartScreen: Close button is not assigned.");
+                return;
+            }
+
+            foreach (var puzzleData in settings.puzzles ?? new List<PuzzleData>())
             {
                 var item = selectionButtonPool.Create(puzzleData);
                 item.transform.SetParent(buttonsContainer);
